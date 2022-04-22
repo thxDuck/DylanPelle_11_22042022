@@ -52,7 +52,7 @@ a:visited {
 
 * {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 h1 {
@@ -65,16 +65,40 @@ h2 {
   font-weight: 500;
 }
 
-.bg-primary {
-  background-color: #FF6060;
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header .logo {
+  max-width: 33%;
 }
 
-.bg-light {
-  background-color: #F7F7F7;
+nav,
+ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
 }
-
-.txt-primary {
+nav a,
+ul a {
+  display: flex;
+  align-items: center;
+}
+nav a li,
+ul a li {
+  text-transform: capitalize;
   color: #FF6060;
+}
+nav a li:hover,
+ul a li:hover {
+  text-decoration: underline;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 1rem 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

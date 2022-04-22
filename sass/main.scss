@@ -4,15 +4,9 @@
 @import "layout/layout.scss";
 @import "components/index.scss";
 
-
-.bg-primary {
-    background-color: $color-primary;
-}
-
-.bg-light {
-    background-color: $color-light-gray;
-}
-
-.txt-primary {
-    color: $color-primary
+#root {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 1rem 1.5rem;
 }
