@@ -4,7 +4,7 @@ html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, tex
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
+  font-size: 1rem;
   font-weight: normal;
 }
 
@@ -50,10 +50,31 @@ a:visited {
   color: unset;
 }
 
-header {
-  background-color: #282c34;
-  color: white;
-  text-decoration: none;
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.bg-primary {
+  background-color: #FF6060;
+}
+
+.bg-light {
+  background-color: #F7F7F7;
+}
+
+.txt-primary {
+  color: #FF6060;
 }
 
 /*# sourceMappingURL=style.css.map */

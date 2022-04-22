@@ -1,4 +1,18 @@
 @import "utils/resetCss.scss";
 @import "utils/variables.scss";
+@import "utils/fonts.scss";
 @import "layout/layout.scss";
 @import "components/index.scss";
+
+
+.bg-primary {
+    background-color: $color-primary;
+}
+
+.bg-light {
+    background-color: $color-light-gray;
+}
+
+.txt-primary {
+    color: $color-primary
+}
