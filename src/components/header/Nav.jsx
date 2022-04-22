@@ -7,12 +7,14 @@ function Nav() {
 		<nav>
 			<ul>
 				<Link to="/">
-					{" "}
-					<li>accueil</li>
+					<li>Accueil</li>
 				</Link>
-				<Link to="/details/JulienTest">
+				<Link to="/tests">
+					<li>Tests</li>
+				</Link>
+				{/* <Link to="/details/JulienTest">
 					<li>à propos</li>
-				</Link>
+				</Link> */}
 			</ul>
 		</nav>
 	);
