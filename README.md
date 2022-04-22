@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Welcome to Kasa App !
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I create a Notion Kanban to split tasks, in components, pages...
+=> [Notion](http://localhost:3000)
 
 ## Available Scripts
 
