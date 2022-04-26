@@ -1,9 +1,42 @@
 .banner {
   width: 100%;
+  text-align: center;
 
-  img {
+  &__img {
+    width: 100%;
     border-radius: $radius-xl;
     filter: brightness(66%);
     -webkit-filter: brightness(66%);
+
+    object-fit: cover;
+    object-position: center;
+    z-index: -10;
+
+    @media (max-width: 810px) {
+      height: 111px;
+      border-radius: $radius;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 48px;
+    z-index: 100;
+    position: relative;
+    top: 6rem;
+    margin-top: -1rem;
+
+    color: #fff;
+
+    @media (max-width: 810px) {
+      top: 4rem;
+      h1 {
+        font-size: 24px;
+        text-align: start;
+        margin-left: 15px;
+      }
+    }
+    @media (max-width: 428px) {
+      top: 6rem;
+    }
   }
 }

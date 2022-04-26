@@ -115,11 +115,46 @@ footer img {
 
 .banner {
   width: 100%;
+  text-align: center;
 }
-.banner img {
+.banner__img {
+  width: 100%;
   border-radius: 25px;
   filter: brightness(66%);
   -webkit-filter: brightness(66%);
+  object-fit: cover;
+  object-position: center;
+  z-index: -10;
+}
+@media (max-width: 810px) {
+  .banner__img {
+    height: 111px;
+    border-radius: 10px;
+  }
+}
+.banner__title {
+  font-weight: 500;
+  font-size: 48px;
+  z-index: 100;
+  position: relative;
+  top: 6rem;
+  margin-top: -1rem;
+  color: #fff;
+}
+@media (max-width: 810px) {
+  .banner__title {
+    top: 4rem;
+  }
+  .banner__title h1 {
+    font-size: 24px;
+    text-align: start;
+    margin-left: 15px;
+  }
+}
+@media (max-width: 428px) {
+  .banner__title {
+    top: 6rem;
+  }
 }
 
 .card {
@@ -159,11 +194,59 @@ footer img {
   }
 }
 
+#page-error {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  color: #FF6060;
+  height: 100%;
+}
+#page-error h1 {
+  font-size: 18rem;
+  font-weight: 700;
+}
+#page-error p {
+  font-size: 2.25rem;
+}
+#page-error .backHome {
+  margin-top: 4rem;
+}
+#page-error .backHome a {
+  text-decoration: underline;
+}
+@media (max-width: 810px) {
+  #page-error h1 {
+    font-size: 10rem;
+  }
+  #page-error p {
+    font-size: 1rem;
+  }
+  #page-error .backHome {
+    margin-top: 10rem;
+  }
+}
+@media (max-width: 810px) and (max-width: 428px) {
+  #page-error h1 {
+    font-size: 6rem;
+  }
+  #page-error p {
+    font-size: 1rem;
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 1rem 1.5rem;
+  padding: 1rem 100px;
+  max-width: 1440px;
+  height: 100vh;
+}
+@media (max-width: 810px) {
+  .main {
+    max-width: 100%;
+    padding: 1rem 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

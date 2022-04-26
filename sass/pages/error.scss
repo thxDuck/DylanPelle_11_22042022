@@ -1,0 +1,42 @@
+#page-error {
+  display: flex;
+  text-align: center;
+
+  flex-direction: column;
+  color: $color-primary;
+  height: 100%;
+
+  h1 {
+    font-size: 18rem;
+    font-weight: 700;
+  }
+  p {
+    font-size: 2.25rem;
+  }
+  .backHome {
+    margin-top: 4rem;
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 810px) {
+    h1 {
+      font-size: 10rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .backHome {
+      margin-top: 10rem;
+    }
+    @media (max-width: 428px) {
+      h1 {
+        font-size: 6rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
