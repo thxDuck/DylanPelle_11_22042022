@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./Logo.jsx";
+import Logo from "./Logo";
 import Nav from "./Nav";
 
 function Header() {

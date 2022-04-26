@@ -113,6 +113,15 @@ footer img {
   width: 122px;
 }
 
+.banner {
+  width: 100%;
+}
+.banner img {
+  border-radius: 25px;
+  filter: brightness(66%);
+  -webkit-filter: brightness(66%);
+}
+
 .card {
   display: flex;
   flex-direction: column-reverse;

@@ -1,0 +1,9 @@
+.banner {
+  width: 100%;
+
+  img {
+    border-radius: $radius-xl;
+    filter: brightness(66%);
+    -webkit-filter: brightness(66%);
+  }
+}
