@@ -1,19 +1,25 @@
 @import "utils/resetCss.scss";
 @import "utils/variables.scss";
 @import "utils/fonts.scss";
-@import "components/index.scss";
+@import "components";
 @import "pages/error.scss";
 
-.main {
+#root {
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    padding: 1rem 100px;
-    max-width: 1440px;
-    height: 100vh;
+    align-items: center;
 
-    @media (max-width: 810px) {
-     max-width: 100%;
-     padding: 1rem 1.5rem;
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        padding: 1rem 100px;
+        max-width: 1440px;
+        min-height: 100vh;
+
+        @media (max-width: 810px) {
+            max-width: 100%;
+            padding: 1rem 1.5rem;
+        }
     }
 }

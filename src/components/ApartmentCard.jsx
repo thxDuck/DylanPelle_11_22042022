@@ -1,10 +1,15 @@
 import React from "react";
-
-function ApartmentCard() {
+import { Link } from "react-router-dom";
+function ApartmentCard(props) {
+	const id = props.apartId;
+	const apartmentUrl = `/details/${id}`;
+	const title = props.title;
+	const cover = props.cover;
 	return (
-		<div className="card">
-			<div className="card__title">Voici un titre un peu plus conséquent.</div>
-		</div>
+		<Link className="card" to={apartmentUrl}>
+			<img src={cover} alt="" />
+			<div className="card__title">{title}</div>
+		</Link>
 	);
 }
 

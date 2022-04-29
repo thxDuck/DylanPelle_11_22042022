@@ -1,0 +1,17 @@
+#cardList {
+    background-color: $color-light-gray;
+    padding: 1.5rem;
+    border-radius: $radius-xl;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 35px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-content: center;
+        }
+    }
+}
