@@ -187,7 +187,7 @@ footer img {
 
 #cardList {
   background-color: #F7F7F7;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
   border-radius: 25px;
 }
 #cardList ul {
@@ -197,6 +197,10 @@ footer img {
   gap: 35px;
 }
 @media (max-width: 768px) {
+  #cardList {
+    padding: unset;
+    background-color: unset;
+  }
   #cardList ul {
     flex-direction: column;
     align-content: center;

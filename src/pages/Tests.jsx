@@ -4,7 +4,6 @@ import ApartmentCard from "../components/ApartmentCard";
 import Tag from "../components/Tag";
 import Banner from "../components/Banner";
 import homeBanner from "../assets/images/banners/home_banner.png";
-import aboutBanner from "../assets/images/banners/about_banner.png";
 
 function Tests() {
 	return (

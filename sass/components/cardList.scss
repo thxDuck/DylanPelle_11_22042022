@@ -1,6 +1,6 @@
 #cardList {
     background-color: $color-light-gray;
-    padding: 1.5rem;
+    padding: 3rem 1.5rem;
     border-radius: $radius-xl;
 
     ul {
@@ -9,7 +9,13 @@
         justify-content: space-around;
         gap: 35px;
 
-        @media (max-width: 768px) {
+    }
+
+    @media (max-width: 768px) {
+        padding: unset;
+        background-color: unset;
+
+        ul {
             flex-direction: column;
             align-content: center;
         }

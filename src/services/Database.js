@@ -626,6 +626,9 @@ const Index = {
         let min = max - APARTMENTS_BY_PAGES;
         console.log('min => ', min, ', Max => ', max);
         return DATAS.slice(min, max);
+    },
+    getById: (id) => {
+        return DATAS.find(d => d.id === id);
     }
 }
 export default Index;

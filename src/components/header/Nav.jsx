@@ -9,11 +9,11 @@ function Nav() {
 				<Link to="/">
 					<li>Accueil</li>
 				</Link>
-				<Link to="/tests">
-					<li>Tests</li>
-				</Link>
-				{/* <Link to="/details/JulienTest">
+				<Link to="/a-propos">
 					<li>à propos</li>
+				</Link>
+				{/* <Link to="/tests">
+					<li>Tests</li>
 				</Link> */}
 			</ul>
 		</nav>
