@@ -186,7 +186,7 @@ footer img {
 }
 
 #cardList {
-  background-color: #F7F7F7;
+  background-color: #F6F6F6;
   padding: 3rem 1.5rem;
   border-radius: 25px;
 }
@@ -224,6 +224,63 @@ footer img {
   }
 }
 
+.dropdown__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: #FF6060;
+  padding: 13px 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.dropdown__title button {
+  background-color: transparent;
+  border: none;
+}
+.dropdown__title .icon-open {
+  animation: rotate180 300ms ease-in-out forwards;
+}
+.dropdown__title .icon-close {
+  animation: rotate180-reverse 300ms ease-in-out forwards;
+}
+.dropdown__content {
+  border-radius: 0 0 5px 5px;
+  background-color: #F6F6F6;
+  color: #FF6060;
+  padding: 30px 15px;
+  z-index: -1;
+  position: relative;
+}
+.dropdown__content:not(.hidden) {
+  display: none;
+}
+.dropdown__content.hidden {
+  animation: slideDown reverse 300ms ease-in-out forwards;
+}
+.dropdown__content.show {
+  display: block;
+  animation: slideDown 300ms ease-in-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes rotate180 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
 #page-error {
   display: flex;
   text-align: center;
