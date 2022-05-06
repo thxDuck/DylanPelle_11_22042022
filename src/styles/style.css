@@ -65,6 +65,32 @@ h2 {
   font-weight: 500;
 }
 
+@keyframes rotate {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotate0 {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -162,6 +188,7 @@ footer img {
   height: 340px;
   border-radius: 10px;
   background: #FF6060 linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.322) 100%);
+  opacity: 0;
 }
 .card__title {
   color: white;
@@ -184,11 +211,30 @@ footer img {
     height: 255px;
   }
 }
+.card.item-1 {
+  animation: slideUp 100ms 0.5s ease-in-out forwards;
+}
+.card.item-2 {
+  animation: slideUp 200ms 0.5s ease-in-out forwards;
+}
+.card.item-3 {
+  animation: slideUp 300ms 0.5s ease-in-out forwards;
+}
+.card.item-4 {
+  animation: slideUp 400ms 0.5s ease-in-out forwards;
+}
+.card.item-5 {
+  animation: slideUp 500ms 0.5s ease-in-out forwards;
+}
+.card.item-6 {
+  animation: slideUp 600ms 0.5s ease-in-out forwards;
+}
 
 #cardList {
   background-color: #F6F6F6;
   padding: 3rem 1.5rem;
   border-radius: 25px;
+  min-height: 30vh;
 }
 #cardList ul {
   display: flex;
@@ -224,61 +270,61 @@ footer img {
   }
 }
 
-.dropdown__title {
+.dropdown {
+  overflow: hidden;
+  max-width: 85%;
+  align-self: center;
+}
+.dropdown .title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
   background-color: #FF6060;
   padding: 13px 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
 }
-.dropdown__title button {
+.dropdown .title .icon-toggle {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
-.dropdown__title .icon-open {
-  animation: rotate180 300ms ease-in-out forwards;
+.dropdown .title .icon-toggle .icon:not(.init) {
+  animation: rotate0 300ms ease-in-out forwards;
 }
-.dropdown__title .icon-close {
-  animation: rotate180-reverse 300ms ease-in-out forwards;
+.dropdown .title .icon-toggle .icon:not(.init).rotate {
+  animation: rotate 300ms ease-in-out forwards;
 }
-.dropdown__content {
+@media (max-width: 468px) {
+  .dropdown .title {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+.dropdown .content {
   border-radius: 0 0 5px 5px;
   background-color: #F6F6F6;
   color: #FF6060;
+  transition: height 0.2s ease-in-out;
+  height: 0;
+}
+.dropdown .content p {
   padding: 30px 15px;
-  z-index: -1;
-  position: relative;
 }
-.dropdown__content:not(.hidden) {
-  display: none;
-}
-.dropdown__content.hidden {
-  animation: slideDown reverse 300ms ease-in-out forwards;
-}
-.dropdown__content.show {
-  display: block;
-  animation: slideDown 300ms ease-in-out forwards;
-}
-
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 468px) {
+  .dropdown .content p {
+    font-size: 12px;
   }
 }
-@keyframes rotate180 {
-  0% {
-    transform: rotate(0);
+@media (max-width: 810px) {
+  .dropdown {
+    max-width: 100%;
   }
-  100% {
-    transform: rotate(180deg);
+  .dropdown .title,
+.dropdown .content {
+    font-size: 1rem;
   }
 }
 #page-error {

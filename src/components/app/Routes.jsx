@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 import Tests from "../../pages/Tests.jsx";
 import ApartmentDetails from "../../pages/ApartmentDetails.jsx";
-import About from "../../pages/about.jsx";
+import About from "../../pages/About.jsx";
 import Error from "../Error";
 function RoutesApp() {
 	return (

@@ -1,74 +1,148 @@
 .dropdown {
-	&__title {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+    overflow: hidden;
+    max-width: 85%;
+    align-self: center;
 
-		border-radius: $radius-dropdown-xl;
-		background-color: $color-primary;
-		padding: 13px 20px;
-		font-weight: bold;
-		color: #fff;
-		button {
-			background-color: transparent;
-			border: none;
-		}
-		.icon-open {
-			animation: rotate180 300ms ease-in-out forwards;
-		}
-		.icon-close {
-			animation: rotate180-reverse 300ms ease-in-out forwards;
-		}
-	}
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-	&__content {
-		border-radius: 0 0 $radius-dropdown-xl $radius-dropdown-xl;
-		background-color: $color-light-gray;
-		color: $color-primary;
-		padding: 30px 15px;
-		z-index: -1;
-		
-		&:not(.hidden) {
-			display: none;
-		}
-		position: relative;
-		
-		&.hidden {
-			animation: slideDown reverse 300ms ease-in-out forwards;
-		}
+        border-radius: $radius-dropdown-xl;
+        background-color: $color-primary;
+        padding: 13px 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
 
-		&.show {
-			display: block;
-			animation: slideDown 300ms ease-in-out forwards;
-		}
-	}
+        .icon-toggle {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            .icon:not(.init) {
+                animation: rotate0 300ms ease-in-out forwards;
+
+                &.rotate {
+                    animation: rotate 300ms ease-in-out forwards;
+                }
+            }
+        }
+
+        @media (max-width: 468px) {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+    }
+
+    .content {
+        border-radius: 0 0 $radius-dropdown-xl $radius-dropdown-xl;
+        background-color: $color-light-gray;
+        color: $color-primary;
+        transition: height 0.2s ease-in-out;
+        height: 0;
+
+        p {
+            padding: 30px 15px;
+
+            @media (max-width: 468px) {
+                font-size: 12px;
+                // padding: 15px 15px;
+            }
+        }
+    }
+
+    @media (max-width: 810px) {
+        max-width: 100%;
+
+        .title,
+        .content {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 468px) {}
+
+        // padding: 15px 15px;
+    }
 }
 
-// .dropdown--closed {
+
+
+
+
+
+// .dropdown {
+// 	&__title {
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: space-between;
+
+// 		border-radius: $radius-dropdown-xl;
+// 		background-color: $color-primary;
+// 		padding: 13px 20px;
+// 		font-weight: bold;
+// 		color: #fff;
+// 		button {
+// 			background-color: transparent;
+// 			border: none;
+// 		}
+// 		.icon-open {
+// 			animation: rotate180 300ms ease-in-out forwards;
+// 		}
+// 		.icon-close {
+// 			animation: rotate180-reverse 300ms ease-in-out forwards;
+// 		}
+// 	}
+
 // 	&__content {
-// 		display: none;
-// 		font-size: 155px;
+// 		border-radius: 0 0 $radius-dropdown-xl $radius-dropdown-xl;
+// 		background-color: $color-light-gray;
+// 		color: $color-primary;
+// 		padding: 30px 15px;
+// 		z-index: -1;
+
+// 		&:not(.hidden) {
+// 			display: none;
+// 		}
+// 		position: relative;
+
+// 		&.hidden {
+// 			animation: slideDown reverse 300ms ease-in-out forwards;
+// 		}
+
+// 		&.show {
+// 			display: block;
+// 			animation: slideDown 300ms ease-in-out forwards;
+// 		}
 // 	}
 // }
 
-@keyframes slideDown {
-	0% {
-		opacity: 0;
-		transform: translateY(-60px);
-	}
+// // .dropdown--closed {
+// // 	&__content {
+// // 		display: none;
+// // 		font-size: 155px;
+// // 	}
+// // }
 
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
+// @keyframes slideDown {
+// 	0% {
+// 		opacity: 0;
+// 		transform: translateY(-60px);
+// 	}
 
-@keyframes rotate180 {
-	0% {
-		transform: rotate(0);
-	}
+// 	100% {
+// 		opacity: 1;
+// 		transform: translateY(0);
+// 	}
+// }
 
-	100% {
-		transform: rotate(180deg);
-	}
-}
+// @keyframes rotate180 {
+// 	0% {
+// 		transform: rotate(0);
+// 	}
+
+// 	100% {
+// 		transform: rotate(180deg);
+// 	}
+// }
