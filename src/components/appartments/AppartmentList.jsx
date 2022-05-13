@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 
 const placeholders = [];
 
-function AppartmentList(props) {
+function AppartmentList() {
 	const [apartmentList, setApartments] = useState(placeholders);
 	const [isMounted, setIsMounted] = useState(false);
+
 	useEffect(() => {
 		!isMounted &&
 			Services.getApartmentList(1, (datas) => {
@@ -17,6 +18,7 @@ function AppartmentList(props) {
 				setIsMounted(true);
 			});
 	}, [isMounted]);
+
 	return (
 		<section id="cardList" className="blur" aria-labelledby="Liste des appartements">
 			<ul id="list">

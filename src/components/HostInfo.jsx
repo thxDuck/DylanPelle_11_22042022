@@ -6,6 +6,7 @@ import starUncheck from "../assets/images/icons/star-unchecked.svg";
 function HostInfo(props) {
 	const host = props.host;
 	let nameSplited = host.name.split(" ");
+
 	let rating = props.rating;
 	rating = parseInt(rating);
 	let ratingTab = [];

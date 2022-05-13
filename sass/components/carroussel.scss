@@ -1,0 +1,54 @@
+#carroussel {
+    height: 415px;
+
+    img {
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        height: 415px;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 25px;
+
+        &.blurLoading {
+            animation: loading 1s forwards;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: relative;
+        bottom: calc(50% + 40px);
+
+        .btn {
+            cursor: pointer;
+            transition: all .6s;
+            background: unset;
+            border: unset;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            img {
+                height: 80px;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        bottom: 17vh;
+        z-index: -1;
+
+        color: #fff;
+        font-size: 1.125rem;
+    }
+
+
+}
+

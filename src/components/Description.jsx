@@ -2,7 +2,6 @@ import React from "react";
 import Dropdown from "./Dropdown";
 
 function Description(props) {
-	const id = props.id;
 	const description = props.description;
 	const equipments = props.equipments;
 

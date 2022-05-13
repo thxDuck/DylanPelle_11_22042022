@@ -5,7 +5,7 @@ function ApartInfos(props) {
 	const location = props.location;
 	const tags = props.tags;
 	const title = props.title;
-	console.log("tags => ", tags);
+
 	return (
 		<div className="info">
 			<div className="info__location">

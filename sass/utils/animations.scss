@@ -29,3 +29,26 @@
         transform: translateY(0px);
     }
 }
+
+
+@keyframes loading {
+    0% {
+        filter: contrast(1);
+    }
+
+    33% {
+        filter: contrast(0);
+    }
+
+    70% {
+        filter: contrast(0);
+    }
+
+    75% {
+        filter: contrast(0.5);
+    }
+
+    100% {
+        filter: contrast(1);
+    }
+}

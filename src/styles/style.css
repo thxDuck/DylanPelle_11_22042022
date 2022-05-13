@@ -91,6 +91,23 @@ h2 {
     transform: translateY(0px);
   }
 }
+@keyframes loading {
+  0% {
+    filter: contrast(1);
+  }
+  33% {
+    filter: contrast(0);
+  }
+  70% {
+    filter: contrast(0);
+  }
+  75% {
+    filter: contrast(0.5);
+  }
+  100% {
+    filter: contrast(1);
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -338,6 +355,50 @@ footer img {
   font-weight: 500;
 }
 
+#carroussel {
+  height: 415px;
+}
+#carroussel img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 415px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 25px;
+}
+#carroussel img.blurLoading {
+  animation: loading 1s forwards;
+}
+#carroussel .buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  bottom: calc(50% + 40px);
+}
+#carroussel .buttons .btn {
+  cursor: pointer;
+  transition: all 0.6s;
+  background: unset;
+  border: unset;
+}
+#carroussel .buttons .btn:hover {
+  transform: scale(1.2);
+}
+#carroussel .buttons .btn img {
+  height: 80px;
+}
+#carroussel .pagination {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 17vh;
+  z-index: -1;
+  color: #fff;
+  font-size: 1.125rem;
+}
+
 #page-error {
   display: flex;
   text-align: center;
@@ -380,6 +441,7 @@ footer img {
 
 #apartmentPage {
   width: 100%;
+  min-height: 120vh;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -417,7 +479,7 @@ footer img {
 }
 #apartmentPage #apartInformations .host__info {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   color: #FF6060;
   gap: 15px;
@@ -493,6 +555,10 @@ footer img {
     max-width: 100%;
     padding: 1rem 1.5rem;
   }
+}
+
+.hide {
+  visibility: hidden !important;
 }
 
 /*# sourceMappingURL=style.css.map */
