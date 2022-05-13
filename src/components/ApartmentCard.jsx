@@ -8,7 +8,7 @@ function ApartmentCard(props) {
 	const order = props.order;
 	let encodedTitle = Utils.encodeToUrl(title);
 
-	const apartmentUrl = `/details/${id}/${encodedTitle}`;
+	const apartmentUrl = `/appartement/${id}/${encodedTitle}`;
 	const cover = props.cover;
 	return (
 		<Link className={`card ${"item-" + order}`} apartid={id} to={apartmentUrl}>

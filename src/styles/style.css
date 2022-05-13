@@ -257,6 +257,7 @@ footer img {
   height: fit-content;
   text-align: center;
   width: 115px;
+  min-width: fit-content;
   padding: 4px;
   background-color: #FF6060;
   border-radius: 10px;
@@ -314,7 +315,8 @@ footer img {
   padding: 30px 15px;
 }
 @media (max-width: 468px) {
-  .dropdown .content p {
+  .dropdown .content p,
+.dropdown .content p li {
     font-size: 12px;
   }
 }
@@ -327,6 +329,15 @@ footer img {
     font-size: 1rem;
   }
 }
+.dropdown.dropdown-sm {
+  width: 45%;
+  list-style: none;
+}
+.dropdown.dropdown-sm .title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 #page-error {
   display: flex;
   text-align: center;
@@ -364,6 +375,103 @@ footer img {
   }
   #page-error p {
     font-size: 1rem;
+  }
+}
+
+#apartmentPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#apartmentPage #apartInformations {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: #FF6060;
+}
+#apartmentPage #apartInformations .info__location {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#apartmentPage #apartInformations .info__location .tagList {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+@media (max-width: 768px) {
+  #apartmentPage #apartInformations {
+    flex-direction: column;
+    gap: 25px;
+  }
+  #apartmentPage #apartInformations .info h1 {
+    font-size: 1.3rem;
+  }
+  #apartmentPage #apartInformations .info p {
+    font-size: 1rem;
+  }
+}
+#apartmentPage #apartInformations .host {
+  min-width: fit-content;
+}
+#apartmentPage #apartInformations .host__info {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: #FF6060;
+  gap: 15px;
+}
+#apartmentPage #apartInformations .host__info__name {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+#apartmentPage #apartInformations .host__info img.profilePic {
+  border-radius: 100%;
+  object-fit: contain;
+  object-position: center;
+  width: 64px;
+}
+@media (max-width: 768px) {
+  #apartmentPage #apartInformations .host__info img.profilePic {
+    width: 40px;
+  }
+}
+#apartmentPage #apartInformations .host__rating .star {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 768px) {
+  #apartmentPage #apartInformations .host {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #apartmentPage #apartInformations .host__rating .star {
+    width: 20px;
+    height: 20px;
+  }
+}
+#apartmentPage #description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: min-content;
+}
+#apartmentPage #description .dropdown {
+  align-self: start;
+}
+@media (max-width: 768px) {
+  #apartmentPage #description {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #apartmentPage #description .dropdown {
+    width: 100%;
+    align-self: center;
   }
 }
 

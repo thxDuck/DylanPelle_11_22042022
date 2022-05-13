@@ -1,7 +1,8 @@
 import React from "react";
 
-function Tag() {
-	return <div className="tag">tag-name</div>;
+function Tag(props) {
+	const title = props.title;
+	return <div className="tag">{title}</div>;
 }
 
 export default Tag;

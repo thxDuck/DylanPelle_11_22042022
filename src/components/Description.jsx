@@ -1,13 +1,24 @@
-import React from "react"
+import React from "react";
+import Dropdown from "./Dropdown";
 
-/*
--- Infomations (localisation,  author...)
-			-- dropdown (title, content, ...)
+function Description(props) {
+	const id = props.id;
+	const description = props.description;
+	const equipments = props.equipments;
 
-
-*/
-function Description() {
-	return <div>Description</div>
+	return (
+		<section id="description">
+			<Dropdown id="desc" size="sm" title="Description" content={description} />
+			<Dropdown
+				id="equip"
+				size="sm"
+				title="Equipements"
+				content={equipments.map((item, i) => (
+					<li key={`equipmentItem-${i}`}>{item}</li>
+				))}
+			/>
+		</section>
+	);
 }
 
-export default Description
+export default Description;
