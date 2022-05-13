@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const placeholders = [];
 
 function AppartmentList() {
-	const [apartmentList, setApartments] = useState(placeholders);
+	const [ApartmentList, setApartments] = useState(placeholders);
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
@@ -22,7 +22,7 @@ function AppartmentList() {
 	return (
 		<section id="cardList" className="blur" aria-labelledby="Liste des appartements">
 			<ul id="list">
-				{apartmentList.map((apartment, index) => (
+				{ApartmentList.map((apartment, index) => (
 					<li className={`${"item-" + index++}`} key={`${apartment.id}`}>
 						<ApartmentCards apartid={apartment.id} title={apartment.title} order={index} cover={apartment.cover} />
 					</li>
