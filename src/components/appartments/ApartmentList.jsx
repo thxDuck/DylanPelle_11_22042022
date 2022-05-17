@@ -1,5 +1,5 @@
 import React from "react";
-import ApartmentCards from "../ApartmentCard";
+import ApartmentCards from "./ApartmentCard";
 import Services from "../../services/Services.js";
 import { useState, useEffect } from "react";
 

@@ -1,44 +1,55 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import Carroussel from "../components/Carroussel.jsx";
-import ApartInformations from "../components/ApartInformations.jsx";
-import Description from "../components/Description.jsx";
+import Carroussel from "../components/appartments/Carroussel.jsx";
+import ApartInformations from "../components/appartments/ApartInformations.jsx";
+import Description from "../components/appartments/Description.jsx";
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Services from "../services/Services";
-
-let mockedApartment = {
-	pictures: [],
-	host: { name: "" },
-	rating: "0",
-	location: "",
-	tags: [],
-	description: "",
-	equipments: [],
-};
 function Apartment() {
+	let mockedApartment = {
+		id: "",
+		pictures: [],
+		host: { name: "" },
+		rating: "0",
+		location: "",
+		tags: [],
+		description: "",
+		equipments: [],
+	};
 	window.scrollTo(0, 0);
-	const params = useParams();
-	const id = params.id;
 	const [apartement, setApartment] = useState(mockedApartment);
 	const [isMounted, setIsMounted] = useState(false);
+	const params = useParams();
+	const id = params.id;
+const navigate = useNavigate();
 
 	useEffect(() => {
-		!isMounted &&
-			Services.getApartmentById(id, (datas) => {
+		!isMounted && Services.getApartmentById(id, (datas) => {
+			if (!!datas) {
 				setApartment(datas);
 				setIsMounted(true);
+			} else {
+      			navigate('/404');
+    }
 			});
-	}, [isMounted]);
+	});
+
 	if (isMounted) {
-		return (
-			<section id="apartmentPage">
+		if (!!apartement && apartement.id === id) {
+			return (
+				<section id="apartmentPage">
 				<Carroussel pictures={apartement.pictures} />
-				<ApartInformations host={apartement.host} rating={apartement.rating} location={apartement.location} tags={apartement.tags} title={apartement.title} />
+				<ApartInformations id={id} host={apartement.host} rating={apartement.rating} location={apartement.location} tags={apartement.tags} title={apartement.title} />
 				<Description description={apartement.description} equipments={apartement.equipments} />
 			</section>
 		);
+		} else {
+		// 	{console.log('REDIRECT !')}
+		// <Navigate replace to="/404" />
+
+		}
 	}
 }
 

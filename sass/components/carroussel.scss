@@ -11,7 +11,7 @@
         border-radius: 25px;
 
         &.blurLoading {
-            animation: loading 1s forwards;
+            animation: loading 1.3s forwards;
         }
     }
 
@@ -24,11 +24,12 @@
 
         .btn {
             cursor: pointer;
-            transition: all .6s;
+            transition: all .3s;
             background: unset;
             border: unset;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 transform: scale(1.2);
             }
 
@@ -42,13 +43,33 @@
         display: flex;
         justify-content: center;
         position: relative;
-        bottom: 17vh;
+        bottom: 30%;
         z-index: -1;
 
         color: #fff;
         font-size: 1.125rem;
     }
 
+    @media (max-width: 810px) {
+        height: 335px;
+        border-radius: 10px;
+
+        img {
+            height: 335px;
+
+        }
+
+        .buttons {
+            bottom: calc(50% + 20px);
+
+            .btn img {
+                height: 40px;
+            }
+        }
+
+        .pagination {
+            bottom: 30%;
+        }
+    }
 
 }
-

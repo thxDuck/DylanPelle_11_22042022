@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Utils from "../services/utils.js";
+import Utils from "../../services/utils.js";
 
 function ApartmentCard(props) {
 	const id = props.apartid;

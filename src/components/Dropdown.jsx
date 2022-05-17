@@ -1,5 +1,3 @@
-// https://openclassrooms.com/fr/courses/7008001-debutez-avec-react/7137536-mettez-en-place-votre-state-local-avec-usestate
-// import { useState, useEffect } from "react";
 import React from "react";
 import arrowIcon from "../assets/images/icons/dropdownArrow.svg";
 

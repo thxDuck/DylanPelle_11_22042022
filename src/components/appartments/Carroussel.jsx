@@ -1,8 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import carrousselArrowL from "../assets/images/icons/carroussel-arrowL.svg";
-import carrousselArrowR from "../assets/images/icons/carroussel-arrowR.svg";
+import carrousselArrowL from "../../assets/images/icons/carroussel-arrowL.svg";
+import carrousselArrowR from "../../assets/images/icons/carroussel-arrowR.svg";
 
 function Carroussel(props) {
 	const pictures = props.pictures;

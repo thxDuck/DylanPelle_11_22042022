@@ -95,7 +95,7 @@ h2 {
   0% {
     filter: contrast(1);
   }
-  33% {
+  25% {
     filter: contrast(0);
   }
   70% {
@@ -368,7 +368,7 @@ footer img {
   border-radius: 25px;
 }
 #carroussel img.blurLoading {
-  animation: loading 1s forwards;
+  animation: loading 1.3s forwards;
 }
 #carroussel .buttons {
   display: flex;
@@ -379,11 +379,11 @@ footer img {
 }
 #carroussel .buttons .btn {
   cursor: pointer;
-  transition: all 0.6s;
+  transition: all 0.3s;
   background: unset;
   border: unset;
 }
-#carroussel .buttons .btn:hover {
+#carroussel .buttons .btn:hover, #carroussel .buttons .btn:focus {
   transform: scale(1.2);
 }
 #carroussel .buttons .btn img {
@@ -393,10 +393,28 @@ footer img {
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 17vh;
+  bottom: 30%;
   z-index: -1;
   color: #fff;
   font-size: 1.125rem;
+}
+@media (max-width: 810px) {
+  #carroussel {
+    height: 335px;
+    border-radius: 10px;
+  }
+  #carroussel img {
+    height: 335px;
+  }
+  #carroussel .buttons {
+    bottom: calc(50% + 20px);
+  }
+  #carroussel .buttons .btn img {
+    height: 40px;
+  }
+  #carroussel .pagination {
+    bottom: 30%;
+  }
 }
 
 #page-error {
