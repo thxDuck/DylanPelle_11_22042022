@@ -1,13 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
-import PropertyDetails from "../../pages/PropertyDetails.jsx";
+import Apartment from "../../pages/Apartment.jsx";
+import About from "../../pages/About.jsx";
 import Error from "../Error";
-import "../../styles/style.css";
+
 function RoutesApp() {
 	return (
 		<Routes>
 			<Route path="/" element={<Home />} />
-			<Route path="/details/:id" element={<PropertyDetails />} />
+			<Route path="/a-propos" element={<About />} />
+			<Route path="/appartement/:id/:title" element={<Apartment />} />
 			<Route path="*" element={<Error />} />
 		</Routes>
 	);

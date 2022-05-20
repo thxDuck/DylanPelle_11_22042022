@@ -1,17 +1,15 @@
-import logo from "../logo.svg";
-import "../App.css";
+import React from "react";
+import Banner from "../components/Banner";
+import ApartmentList from "../components/appartments/ApartmentList.jsx";
+import bannerSrc from "../assets/images/banners/home_banner.png";
 
-console.log("Hi ! Home");
-
-function Home() {
+export default function Home() {
+	document.getElementsByTagName("title")[0].innerHTML = `Kasa - Accueil`;
+	window.scrollTo(0, 0);
 	return (
-		<div className="App">
-			<main className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<h1>Welcome To Kasa App !</h1>
-			</main>
-		</div>
+		<React.Fragment>
+			<Banner title="Chez vous, partout et ailleurs" bannerSrc={bannerSrc} />
+			<ApartmentList page="1" />
+		</React.Fragment>
 	);
 }
-
-export default Home;

@@ -4,7 +4,7 @@ html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, tex
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
+  font-size: 1rem;
   font-weight: normal;
 }
 
@@ -50,10 +50,546 @@ a:visited {
   color: unset;
 }
 
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotate-reverse {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disapear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 header {
-  background-color: #282c34;
+  display: flex;
+  justify-content: space-between;
+}
+header .logo {
+  max-width: 33%;
+}
+
+nav,
+ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+nav a,
+ul a {
+  display: flex;
+  align-items: center;
+}
+nav a li,
+ul a li {
+  text-transform: capitalize;
+  color: #FF6060;
+}
+nav a li:hover,
+ul a li:hover {
+  text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 60px 0px 20px;
+  width: 100%;
+  background-color: #000000;
   color: white;
-  text-decoration: none;
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 60px 0px 60px;
+  }
+}
+footer img {
+  width: 122px;
+}
+
+.banner {
+  width: 100%;
+}
+.banner h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+  z-index: 100;
+  position: relative;
+  top: 7rem;
+  color: #fff;
+}
+@media (max-width: 1000px) {
+  .banner h1 {
+    top: 4.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+@media (max-width: 1000px) and (max-width: 468px) {
+  .banner h1 {
+    top: 5rem;
+    text-align: left;
+    margin-left: 15px;
+  }
+}
+.banner img {
+  width: 100%;
+  border-radius: 25px;
+  object-position: center;
+  object-fit: cover;
+  filter: brightness(66%);
+  -webkit-filter: brightness(66%);
+}
+@media (max-width: 810px) {
+  .banner img {
+    height: 111px;
+    border-radius: 10px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 340px;
+  height: 340px;
+  opacity: 0;
+  border-radius: 10px;
+  background: #FF6060 linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.322) 100%);
+}
+.card__title {
+  margin: 20px;
+  font-size: 0.9rem;
+  height: 10%;
+  align-self: flex-start;
+  color: white;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  flex-grow: 10;
+}
+.card.item-1 {
+  animation: slideUp 100ms 0.5s ease-in-out forwards;
+}
+.card.item-2 {
+  animation: slideUp 200ms 0.5s ease-in-out forwards;
+}
+.card.item-3 {
+  animation: slideUp 300ms 0.5s ease-in-out forwards;
+}
+.card.item-4 {
+  animation: slideUp 400ms 0.5s ease-in-out forwards;
+}
+.card.item-5 {
+  animation: slideUp 500ms 0.5s ease-in-out forwards;
+}
+.card.item-6 {
+  animation: slideUp 600ms 0.5s ease-in-out forwards;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: 255px;
+  }
+}
+
+#cardList {
+  min-height: 30vh;
+  padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+}
+#cardList ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 35px;
+}
+@media (max-width: 768px) {
+  #cardList {
+    padding: unset;
+    background-color: unset;
+  }
+  #cardList ul {
+    flex-direction: column;
+    align-content: center;
+  }
+}
+
+.tag {
+  height: fit-content;
+  text-align: center;
+  width: 115px;
+  min-width: fit-content;
+  padding: 4px;
+  background-color: #FF6060;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: white;
+}
+@media (max-width: 768px) {
+  .tag {
+    font-size: 0.65rem;
+    width: 84px;
+  }
+}
+
+.dropdown {
+  overflow: hidden;
+  max-width: 85%;
+  align-self: center;
+}
+.dropdown .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  border-radius: 5px;
+  background-color: #FF6060;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+.dropdown .title .icon-toggle {
+  background-color: transparent;
+  border: none;
+}
+.dropdown .title .icon-toggle .icon:not(.init) {
+  animation: rotate-reverse 0.3s ease-in-out forwards;
+}
+.dropdown .title .icon-toggle .icon:not(.init).rotate {
+  animation: rotate 0.3s ease-in-out forwards;
+}
+@media (max-width: 468px) {
+  .dropdown .title {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+.dropdown .content {
+  border-radius: 0 0 5px 5px;
+  background-color: #F6F6F6;
+  color: #FF6060;
+  transition: height 0.2s ease-in-out;
+  height: 0;
+}
+.dropdown .content p {
+  padding: 30px 15px;
+}
+@media (max-width: 468px) {
+  .dropdown .content p,
+.dropdown .content p li {
+    font-size: 12px;
+  }
+}
+@media (max-width: 810px) {
+  .dropdown {
+    max-width: 100%;
+  }
+  .dropdown .title,
+.dropdown .content {
+    font-size: 1rem;
+  }
+}
+.dropdown.dropdown-sm {
+  width: 45%;
+  list-style: none;
+}
+.dropdown.dropdown-sm .title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#carroussel {
+  height: 415px;
+}
+#carroussel img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 415px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 25px;
+}
+#carroussel img.appear {
+  animation: appear 0.5s forwards;
+}
+#carroussel img.disapear {
+  animation: disapear 0.3s forwards;
+}
+#carroussel .buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  bottom: calc(50% + 40px);
+}
+#carroussel .buttons .btn {
+  cursor: pointer;
+  transition: all 0.3s;
+  background: unset;
+  border: unset;
+}
+#carroussel .buttons .btn:hover, #carroussel .buttons .btn:focus {
+  transform: scale(1.2);
+}
+#carroussel .buttons .btn img {
+  height: 80px;
+}
+#carroussel .pagination {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 30%;
+  z-index: -1;
+  font-size: 1.125rem;
+  color: #fff;
+}
+@media (max-width: 810px) {
+  #carroussel {
+    height: 335px;
+    border-radius: 10px;
+  }
+  #carroussel img {
+    height: 335px;
+  }
+  #carroussel .buttons {
+    bottom: calc(50% + 20px);
+  }
+  #carroussel .buttons .btn img {
+    height: 40px;
+  }
+  #carroussel .pagination {
+    bottom: 30%;
+  }
+}
+
+#page-error {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  color: #FF6060;
+}
+#page-error h1 {
+  font-size: 18rem;
+  font-weight: 700;
+}
+#page-error p {
+  font-size: 2.25rem;
+}
+#page-error .backHome {
+  margin-top: 4rem;
+}
+#page-error .backHome a {
+  text-decoration: underline;
+}
+@media (max-width: 810px) {
+  #page-error h1 {
+    font-size: 10rem;
+  }
+  #page-error p {
+    font-size: 1rem;
+  }
+  #page-error .backHome {
+    margin-top: 10rem;
+  }
+}
+@media (max-width: 810px) and (max-width: 428px) {
+  #page-error h1 {
+    font-size: 6rem;
+  }
+  #page-error p {
+    font-size: 1rem;
+  }
+}
+
+#apartmentPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 115vh;
+  width: 100%;
+  gap: 20px;
+}
+#apartmentPage #apartInformations {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: #FF6060;
+}
+#apartmentPage #apartInformations .info__location {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#apartmentPage #apartInformations .info__location .tagList {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  #apartmentPage #apartInformations {
+    flex-direction: column;
+    gap: 25px;
+  }
+  #apartmentPage #apartInformations .info h1 {
+    font-size: 1.3rem;
+  }
+  #apartmentPage #apartInformations .info p {
+    font-size: 1rem;
+  }
+}
+#apartmentPage #apartInformations .host {
+  min-width: fit-content;
+}
+#apartmentPage #apartInformations .host__info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  color: #FF6060;
+}
+#apartmentPage #apartInformations .host__info__name {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+#apartmentPage #apartInformations .host__info img.profilePic {
+  width: 64px;
+  border-radius: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+@media (max-width: 768px) {
+  #apartmentPage #apartInformations .host__info img.profilePic {
+    width: 40px;
+  }
+}
+#apartmentPage #apartInformations .host__rating .star {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 768px) {
+  #apartmentPage #apartInformations .host {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #apartmentPage #apartInformations .host__rating .star {
+    width: 20px;
+    height: 20px;
+  }
+}
+#apartmentPage #description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: min-content;
+}
+#apartmentPage #description .dropdown {
+  align-self: start;
+}
+@media (max-width: 768px) {
+  #apartmentPage #description {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #apartmentPage #description .dropdown {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#root .main {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 1rem 100px;
+  max-width: 1440px;
+  min-width: 100%;
+  min-height: 100vh;
+}
+@media (max-width: 810px) {
+  #root .main {
+    max-width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+.hide {
+  visibility: hidden !important;
+}
+
+.d-none {
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

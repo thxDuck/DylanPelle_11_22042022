@@ -1,5 +1,29 @@
 header {
-    background-color: $bg-color;
-    color: white;
-    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        max-width: 33%;
+    }
+}
+
+nav,
+ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+
+    a {
+        display: flex;
+        align-items: center;
+
+        li {
+            text-transform: capitalize;
+            color: $color-primary;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }

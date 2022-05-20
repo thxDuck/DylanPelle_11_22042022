@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -9,11 +8,8 @@ function Nav() {
 				<Link to="/">
 					<li>Accueil</li>
 				</Link>
-				<Link to="/thisIsALie">
-					<li>A propos</li>
-				</Link>
-				<Link to="/details/JulienTest">
-					<li>A propos</li>
+				<Link to="/a-propos">
+					<li>à propos</li>
 				</Link>
 			</ul>
 		</nav>

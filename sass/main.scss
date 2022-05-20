@@ -1,4 +1,36 @@
 @import "utils/resetCss.scss";
 @import "utils/variables.scss";
-@import "layout/layout.scss";
-@import "components/index.scss";
+@import "utils/fonts.scss";
+@import "utils/animations.scss";
+@import "components";
+@import "pages/index.scss";
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        padding: 1rem 100px;
+        max-width: 1440px;
+        min-width: 100%;
+
+        min-height: 100vh;
+
+        @media (max-width: 810px) {
+            max-width: 100%;
+            padding: 1rem 1.5rem;
+        }
+    }
+}
+
+.hide {
+    visibility: hidden !important;
+}
+
+.d-none {
+    display: none !important;
+}

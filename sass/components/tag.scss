@@ -1,0 +1,17 @@
+.tag {
+    height: fit-content;
+    text-align: center;
+    width: 115px;
+    min-width: fit-content;
+    padding: 4px;
+
+    background-color: $color-primary;
+    border-radius: $radius;
+    font-size: 0.85rem;
+    color: white;
+
+    @media (max-width: 768px) {
+        font-size: 0.65rem;
+        width: 84px;
+    }
+}

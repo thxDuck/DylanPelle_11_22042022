@@ -1,0 +1,42 @@
+.banner {
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+    z-index: 100;
+    position: relative;
+    top: 7rem;
+    color: #fff;
+
+    @media (max-width: 1000px) {
+      top: 4.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+
+      @media (max-width: 468px) {
+        top: 5rem;
+        text-align: left;
+        margin-left: 15px;
+      }
+    }
+  }
+
+
+  img {
+    width: 100%;
+    border-radius: $radius-xl;
+    object-position: center;
+    object-fit: cover;
+
+    filter: brightness(66%);
+    -webkit-filter: brightness(66%);
+
+    @media (max-width: 810px) {
+      height: 111px;
+      border-radius: $radius;
+    }
+  }
+
+}

@@ -1,0 +1,78 @@
+#carroussel {
+    height: 415px;
+
+    img {
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        height: 415px;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 25px;
+
+        &.appear {
+            animation: appear .5s forwards;
+        }
+
+        &.disapear {
+            animation: disapear .3s forwards;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: relative;
+        bottom: calc(50% + 40px);
+
+        .btn {
+            cursor: pointer;
+            transition: all .3s;
+            background: unset;
+            border: unset;
+
+            &:hover,
+            &:focus {
+                transform: scale(1.2);
+            }
+
+            img {
+                height: 80px;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        bottom: 30%;
+        z-index: -1;
+        font-size: 1.125rem;
+
+        color: #fff;
+    }
+
+    @media (max-width: 810px) {
+        height: 335px;
+        border-radius: 10px;
+
+        img {
+            height: 335px;
+        }
+
+        .buttons {
+            bottom: calc(50% + 20px);
+
+            .btn img {
+                height: 40px;
+            }
+        }
+
+        .pagination {
+            bottom: 30%;
+        }
+    }
+
+}
