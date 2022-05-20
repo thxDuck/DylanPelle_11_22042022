@@ -1,18 +1,18 @@
 #apartmentPage {
-    width: 100%;
-    min-height: 120vh;
     display: flex;
     flex-direction: column;
+    min-height: 115vh;
+    width: 100%;
     gap: 20px;
 
     #apartInformations {
         display: flex;
         width: 100%;
         justify-content: space-between;
+
         color: $color-primary;
 
         .info {
-
             &__location {
                 display: flex;
                 flex-direction: column;
@@ -20,8 +20,8 @@
 
                 .tagList {
                     display: flex;
-                    gap: 10px;
                     flex-wrap: nowrap;
+                    gap: 10px;
                 }
             }
         }
@@ -51,8 +51,9 @@
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                color: $color-primary;
                 gap: 15px;
+
+                color: $color-primary;
 
                 &__name {
                     display: flex;
@@ -62,15 +63,13 @@
                 }
 
                 img.profilePic {
+                    width: 64px;
                     border-radius: 100%;
                     object-fit: contain;
                     object-position: center;
-                    width: 64px;
                 }
 
                 @media (max-width: 768px) {
-
-
                     img.profilePic {
                         width: 40px;
                     }
@@ -85,7 +84,6 @@
                     height: 30px;
                 }
             }
-
 
             @media (max-width: 768px) {
                 display: flex;
@@ -102,8 +100,6 @@
             }
 
         }
-
-
     }
 
     #description {
@@ -125,7 +121,6 @@
             .dropdown {
                 width: 100%;
                 align-self: center;
-
             }
         }
     }

@@ -10,8 +10,12 @@
         object-fit: cover;
         border-radius: 25px;
 
-        &.blurLoading {
-            animation: loading .5s forwards;
+        &.appear {
+            animation: appear .5s forwards;
+        }
+
+        &.disapear {
+            animation: disapear .3s forwards;
         }
     }
 
@@ -45,9 +49,9 @@
         position: relative;
         bottom: 30%;
         z-index: -1;
+        font-size: 1.125rem;
 
         color: #fff;
-        font-size: 1.125rem;
     }
 
     @media (max-width: 810px) {
@@ -56,7 +60,6 @@
 
         img {
             height: 335px;
-
         }
 
         .buttons {

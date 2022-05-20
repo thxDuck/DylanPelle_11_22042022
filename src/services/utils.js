@@ -23,7 +23,7 @@ const Index = {
             let emojisFound = newString.match(emojis);
             if (!!emojisFound && emojisFound.length > 0) {
                 for (let i = 0; i < emojisFound.length; i++) {
-                    let emo = emojisFound[i];
+                    const emo = emojisFound[i];
                     if (newString.indexOf(emo) > -1)
                         do {
                             newString = newString.replace(emo, "");

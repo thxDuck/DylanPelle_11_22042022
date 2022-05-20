@@ -16,6 +16,8 @@
         gap: 35px;
         padding: 1rem 100px;
         max-width: 1440px;
+        min-width: 100%;
+
         min-height: 100vh;
 
         @media (max-width: 810px) {
@@ -27,4 +29,8 @@
 
 .hide {
     visibility: hidden !important;
+}
+
+.d-none {
+    display: none !important;
 }

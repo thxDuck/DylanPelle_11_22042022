@@ -3,6 +3,7 @@ import Home from "../../pages/Home";
 import Apartment from "../../pages/Apartment.jsx";
 import About from "../../pages/About.jsx";
 import Error from "../Error";
+
 function RoutesApp() {
 	return (
 		<Routes>

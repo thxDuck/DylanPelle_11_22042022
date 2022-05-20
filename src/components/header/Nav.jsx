@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -12,9 +11,6 @@ function Nav() {
 				<Link to="/a-propos">
 					<li>à propos</li>
 				</Link>
-				{/* <Link to="/tests">
-					<li>Tests</li>
-				</Link> */}
 			</ul>
 		</nav>
 	);

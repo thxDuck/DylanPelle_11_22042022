@@ -8,27 +8,6 @@ function Carroussel(props) {
 	const pictures = props.pictures;
 	let [i, setIndex] = useState(0);
 
-	const updatePic = (i, type) => {
-		i = type === "+" ? i + 1 : i - 1;
-		if (!pictures[i]) {
-			if (i > pictures.length - 1) i = 0;
-			else i = pictures.length - 1;
-		}
-
-		let image = document.getElementById("carrousselImage");
-		image.classList.add("blurLoading");
-		setTimeout(() => {
-			image.classList.remove("blurLoading");
-		}, 500);
-		setTimeout(() => {
-			image.src = pictures[i];
-		}, 250);
-		setIndex(i);
-		let pagination = document.getElementById("pagination");
-		pagination.innerHTML = i - 1 + "/" + pictures.length - 1;
-		pagination.innerHTML = `${i + 1}/${pictures.length}`;
-	};
-
 	const keyboardNavigation = (e) => {
 		if (pictures.length > 1) {
 			if (e.key === "ArrowRight") {
@@ -38,6 +17,31 @@ function Carroussel(props) {
 			}
 		}
 	};
+	const switchImage = (currentImage, nextImage) => {
+		setTimeout(() => {
+			currentImage.classList.toggle("disapear");
+			currentImage.classList.toggle("d-none");
+
+			nextImage.classList.remove("d-none");
+			nextImage.classList.toggle("appear");
+		}, 300);
+	};
+	const updatePic = (i, type) => {
+		const currentImage = document.querySelector(`img[data-index="${i}"]`);
+		i = type === "+" ? i + 1 : i - 1;
+		if (!pictures[i]) {
+			if (i > pictures.length - 1) i = 0;
+			else i = pictures.length - 1;
+		}
+		setIndex(i);
+		const nextImage = document.querySelector(`img[data-index="${i}"]`);
+		currentImage.classList.toggle("disapear");
+		switchImage(currentImage, nextImage);
+
+		const pagination = document.getElementById("pagination");
+		console.log("i => ", i);
+		pagination.innerHTML = `${i + 1}/${pictures.length}`;
+	};
 
 	useEffect(() => {
 		window.addEventListener("keydown", keyboardNavigation);
@@ -45,9 +49,12 @@ function Carroussel(props) {
 			window.removeEventListener("keydown", keyboardNavigation);
 		};
 	});
+
 	return (
 		<div id="carroussel">
-			<img id="carrousselImage" className="" src={pictures[0]} alt="" />
+			{pictures.map((src, i) => (
+				<img data-index={i} src={src} key={i} alt="" className={`carrousselImage ${i !== 0 ? "d-none" : ""}`} />
+			))}
 			<div className={`buttons ${pictures.length <= 1 ? "hide" : ""}`}>
 				<button type="button" aria-label="Précédant" className="buttons--previous btn" tabIndex={1} onClick={() => updatePic(i, "-")}>
 					<img src={carrousselArrowL} alt="" />

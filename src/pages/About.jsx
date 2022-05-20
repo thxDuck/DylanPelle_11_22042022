@@ -10,10 +10,11 @@ const getAboutText = () => {
 
 const About = () => {
 	const aboutTexts = getAboutText();
+	document.getElementsByTagName("title")[0].innerHTML = `Kasa - A propos`;
+
 	return (
 		<React.Fragment>
 			<Banner title="" bannerSrc={aboutBanner} />
-
 			{aboutTexts.map((item, index) => (
 				<Dropdown id={`about-item-${index}`} key={`about-item-${index}`} title={item.title} content={item.content} />
 			))}

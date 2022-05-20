@@ -1,15 +1,15 @@
 #cardList {
-    background-color: $color-light-gray;
-    padding: 3rem 1.5rem;
-    border-radius: $radius-xl;
     min-height: 30vh;
+    padding: 3rem 1.5rem;
+
+    background-color: $color-light-gray;
+    border-radius: $radius-xl;
 
     ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         gap: 35px;
-
     }
 
     @media (max-width: 768px) {
@@ -19,7 +19,6 @@
         ul {
             flex-direction: column;
             align-content: center;
-
         }
     }
 }

@@ -4,7 +4,7 @@ import Footer from "../footer/Footer.jsx";
 import RoutesApp from "./Routes";
 import { BrowserRouter } from "react-router-dom";
 import "../../styles/style.css";
-// Needs to set Headers, routes, footer...
+
 function App() {
 	return (
 		<BrowserRouter>

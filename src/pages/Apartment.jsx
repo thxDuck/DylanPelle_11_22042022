@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Carroussel from "../components/appartments/Carroussel.jsx";
 import ApartInformations from "../components/appartments/ApartInformations.jsx";
 import Description from "../components/appartments/Description.jsx";
 
-import { useParams, useNavigate } from "react-router-dom";
 import Services from "../services/Services";
+
 function Apartment() {
 	let mockedApartment = {
 		id: "",
@@ -29,6 +30,7 @@ function Apartment() {
 		!isMounted &&
 			Services.getApartmentById(id, (datas) => {
 				if (!!datas) {
+					document.getElementsByTagName("title")[0].innerHTML = `Kasa - ${datas.title}`;
 					setApartment(datas);
 					setIsMounted(true);
 				} else {
@@ -38,17 +40,15 @@ function Apartment() {
 	});
 
 	if (isMounted) {
-		if (!!apartement && apartement.id === id) {
-			return (
-				<main role="main">
-					<section id="apartmentPage">
-						<Carroussel pictures={apartement.pictures} />
-						<ApartInformations id={id} host={apartement.host} rating={apartement.rating} location={apartement.location} tags={apartement.tags} title={apartement.title} />
-						<Description description={apartement.description} equipments={apartement.equipments} />
-					</section>
-				</main>
-			);
-		}
+		return (
+			<main role="main">
+				<section id="apartmentPage">
+					<Carroussel pictures={apartement.pictures} />
+					<ApartInformations id={id} host={apartement.host} rating={apartement.rating} location={apartement.location} tags={apartement.tags} title={apartement.title} />
+					<Description description={apartement.description} equipments={apartement.equipments} />
+				</section>
+			</main>
+		);
 	}
 }
 

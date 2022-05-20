@@ -7,24 +7,25 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 13px 20px;
 
         border-radius: $radius-dropdown-xl;
         background-color: $color-primary;
-        padding: 13px 20px;
+
         font-size: 1.5rem;
         font-weight: bold;
+        cursor: pointer;
         color: #fff;
 
         .icon-toggle {
             background-color: transparent;
             border: none;
-            cursor: pointer;
 
             .icon:not(.init) {
-                animation: rotate0 300ms ease-in-out forwards;
+                animation: rotate-reverse .3s ease-in-out forwards;
 
                 &.rotate {
-                    animation: rotate 300ms ease-in-out forwards;
+                    animation: rotate .3s ease-in-out forwards;
                 }
             }
         }
@@ -63,10 +64,6 @@
         .content {
             font-size: 1rem;
         }
-
-        @media (max-width: 468px) {}
-
-        // padding: 15px 15px;
     }
 
     &.dropdown-sm {

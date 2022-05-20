@@ -14,11 +14,11 @@ const Dropdown = (props) => {
 		return false;
 	};
 	const toggle = (e) => {
-		let dropdownId = getDropDownIdByClick(e.target);
-		let dropdown = document.querySelector("#" + dropdownId + "");
-		let content = document.querySelector("#" + dropdownId + " .content");
-		let icon = dropdown.childNodes[0].children[0].children[0];
-		let isVisible = icon.classList.contains("init") ? false : icon.classList.contains("rotate");
+		const dropdownId = getDropDownIdByClick(e.target);
+		const dropdown = document.querySelector("#" + dropdownId + "");
+		const content = document.querySelector("#" + dropdownId + " .content");
+		const icon = dropdown.childNodes[0].children[0].children[0];
+		const isVisible = icon.classList.contains("init") ? false : icon.classList.contains("rotate");
 
 		if (!isVisible) {
 			icon.classList.remove("init");
