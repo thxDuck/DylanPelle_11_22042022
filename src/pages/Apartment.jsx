@@ -23,7 +23,7 @@ function Apartment() {
 	const [isMounted, setIsMounted] = useState(false);
 	const params = useParams();
 	const id = params.id;
-const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		!isMounted && Services.getApartmentById(id, (datas) => {
@@ -31,23 +31,25 @@ const navigate = useNavigate();
 				setApartment(datas);
 				setIsMounted(true);
 			} else {
-      			navigate('/404');
-    }
-			});
+				navigate('/404');
+			}
+		});
 	});
 
 	if (isMounted) {
 		if (!!apartement && apartement.id === id) {
 			return (
-				<section id="apartmentPage">
-				<Carroussel pictures={apartement.pictures} />
-				<ApartInformations id={id} host={apartement.host} rating={apartement.rating} location={apartement.location} tags={apartement.tags} title={apartement.title} />
-				<Description description={apartement.description} equipments={apartement.equipments} />
-			</section>
-		);
+				<main role="main">
+					<section id="apartmentPage">
+						<Carroussel pictures={apartement.pictures} />
+						<ApartInformations id={id} host={apartement.host} rating={apartement.rating} location={apartement.location} tags={apartement.tags} title={apartement.title} />
+						<Description description={apartement.description} equipments={apartement.equipments} />
+					</section>
+				</main>
+			);
 		} else {
-		// 	{console.log('REDIRECT !')}
-		// <Navigate replace to="/404" />
+			// 	{console.log('REDIRECT !')}
+			// <Navigate replace to="/404" />
 
 		}
 	}

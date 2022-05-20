@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 function Header() {
 	return (
-		<header>
+		<header role="banner">
 			<Logo />
 			<Nav />
 		</header>

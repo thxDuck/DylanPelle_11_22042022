@@ -36,16 +36,16 @@
         filter: contrast(1);
     }
 
-    25% {
+    33% {
         filter: contrast(0);
     }
 
-    70% {
-        filter: contrast(0);
-    }
+    // 70% {
+    //     filter: contrast(0);
+    // }
 
-    75% {
-        filter: contrast(0.5);
+    66% {
+        filter: contrast(0);
     }
 
     100% {

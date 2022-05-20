@@ -95,14 +95,11 @@ h2 {
   0% {
     filter: contrast(1);
   }
-  25% {
+  33% {
     filter: contrast(0);
   }
-  70% {
+  66% {
     filter: contrast(0);
-  }
-  75% {
-    filter: contrast(0.5);
   }
   100% {
     filter: contrast(1);
@@ -368,7 +365,7 @@ footer img {
   border-radius: 25px;
 }
 #carroussel img.blurLoading {
-  animation: loading 1.3s forwards;
+  animation: loading 0.5s forwards;
 }
 #carroussel .buttons {
   display: flex;

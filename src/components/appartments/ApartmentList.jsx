@@ -20,15 +20,17 @@ function AppartmentList() {
 	}, [isMounted]);
 
 	return (
-		<section id="cardList" className="blur" aria-labelledby="Liste des appartements">
-			<ul id="list">
-				{ApartmentList.map((apartment, index) => (
-					<li className={`${"item-" + index++}`} key={`${apartment.id}`}>
-						<ApartmentCards apartid={apartment.id} title={apartment.title} order={index} cover={apartment.cover} />
-					</li>
-				))}
-			</ul>
-		</section>
+		<main role="main">
+			<section id="cardList" className="blur" aria-label="Liste des appartements">
+				<ul id="list">
+					{ApartmentList.map((apartment, index) => (
+						<li className={`${"item-" + index++}`} key={`${apartment.id}`}>
+							<ApartmentCards apartid={apartment.id} title={apartment.title} order={index} cover={apartment.cover} />
+						</li>
+					))}
+				</ul>
+			</section>
+		</main>
 	);
 }
 export default AppartmentList;

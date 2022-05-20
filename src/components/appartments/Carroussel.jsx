@@ -21,7 +21,7 @@ function Carroussel(props) {
 		}, 500);
 		setTimeout(() => {
 			image.src = pictures[i];
-		}, 200);
+		}, 250);
 		setIndex(i);
 		let pagination = document.getElementById("pagination");
 		pagination.innerHTML = i - 1 + "/" + pictures.length - 1;
@@ -43,14 +43,14 @@ function Carroussel(props) {
 		<div id="carroussel">
 			<img id="carrousselImage" className="" src={pictures[0]} alt="" />
 			<div className={`buttons ${pictures.length <= 1 ? "hide" : ""}`}>
-				<button type="button" className="buttons--previous btn" tabIndex={1} onClick={() => updatePic(i, "-")}>
+				<button type="button" aria-label="Précédant" className="buttons--previous btn" tabIndex={1} onClick={() => updatePic(i, "-")}>
 					<img src={carrousselArrowL} alt="" />
 				</button>
-				<button type="button" className="buttons--next btn lol" tabIndex={2} onClick={() => updatePic(i, "+")}>
+				<button type="button" aria-label="Suivant" className="buttons--next btn lol" tabIndex={2} onClick={() => updatePic(i, "+")}>
 					<img src={carrousselArrowR} alt="" />
 				</button>
 			</div>
-			<div id="pagination" className="pagination">
+			<div id="pagination" aria-label="Pagination" className="pagination">
 				{`1/${pictures.length}`}
 			</div>
 		</div>
