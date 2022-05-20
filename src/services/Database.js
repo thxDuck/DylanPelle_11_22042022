@@ -32,7 +32,6 @@ const Index = {
             if (!!datas.length) {
                 let max = (page) * APARTMENTS_BY_PAGES;
                 let min = max - APARTMENTS_BY_PAGES;
-                console.log('min => ', min, ', Max => ', max);
                 let apartments = datas.slice(min, max);
                 callback(apartments);
             }

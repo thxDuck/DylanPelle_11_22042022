@@ -46,23 +46,3 @@ const Dropdown = (props) => {
 };
 
 export default Dropdown;
-
-// Old useEffect
-
-/* <div className="title" onClick={(e) => toggle(id)}> */
-
-// const [show, toggle1] = useState(false);
-// useEffect((id) => {
-// console.log("this => ", this);
-// console.log("id => ", id);
-// let content = document.querySelector(".dropdown .content");
-// let icon = document.querySelector(".dropdown .title .icon");
-// if (show) {
-// 	icon.classList.remove("init");
-// 	content.style.height = `${content.children[0].scrollHeight}px`;
-// 	icon.classList.add("rotate");
-// } else {
-// 	content.style.height = `0px`;
-// 	icon.classList.remove("rotate");
-// }
-// });

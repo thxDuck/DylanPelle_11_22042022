@@ -26,14 +26,15 @@ function Apartment() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		!isMounted && Services.getApartmentById(id, (datas) => {
-			if (!!datas) {
-				setApartment(datas);
-				setIsMounted(true);
-			} else {
-				navigate('/404');
-			}
-		});
+		!isMounted &&
+			Services.getApartmentById(id, (datas) => {
+				if (!!datas) {
+					setApartment(datas);
+					setIsMounted(true);
+				} else {
+					navigate("/404");
+				}
+			});
 	});
 
 	if (isMounted) {
@@ -47,10 +48,6 @@ function Apartment() {
 					</section>
 				</main>
 			);
-		} else {
-			// 	{console.log('REDIRECT !')}
-			// <Navigate replace to="/404" />
-
 		}
 	}
 }

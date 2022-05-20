@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import carrousselArrowL from "../../assets/images/icons/carroussel-arrowL.svg";
 import carrousselArrowR from "../../assets/images/icons/carroussel-arrowR.svg";
@@ -14,6 +14,7 @@ function Carroussel(props) {
 			if (i > pictures.length - 1) i = 0;
 			else i = pictures.length - 1;
 		}
+
 		let image = document.getElementById("carrousselImage");
 		image.classList.add("blurLoading");
 		setTimeout(() => {
@@ -28,17 +29,22 @@ function Carroussel(props) {
 		pagination.innerHTML = `${i + 1}/${pictures.length}`;
 	};
 
-	// const keyboardNavigation = (e) => {
-	// 	e.stopPropagation();
-	// 	if (pictures.length > 1) {
-	// 		console.log("e.key => ", e.key);
-	// 		if (e.key === "ArrowRight") updatePic(i, "+");
-	// 		if (e.key === "ArrowLeft") updatePic(i, "-");
-	// 	}
-	// };
-	// window.addEventListener("keydown", (e) => {
-	// 	keyboardNavigation(e);
-	// });
+	const keyboardNavigation = (e) => {
+		if (pictures.length > 1) {
+			if (e.key === "ArrowRight") {
+				updatePic(i, "+");
+			} else if (e.key === "ArrowLeft") {
+				updatePic(i, "-");
+			}
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("keydown", keyboardNavigation);
+		return () => {
+			window.removeEventListener("keydown", keyboardNavigation);
+		};
+	});
 	return (
 		<div id="carroussel">
 			<img id="carrousselImage" className="" src={pictures[0]} alt="" />
