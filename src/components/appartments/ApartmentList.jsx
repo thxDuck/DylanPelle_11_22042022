@@ -12,8 +12,6 @@ function AppartmentList() {
 	useEffect(() => {
 		!isMounted &&
 			Services.getApartmentList(1, (datas) => {
-				const cardList = document.getElementById("cardList");
-				if (!!cardList.classList.contains("blur")) cardList.classList.remove("blur");
 				setApartments(datas);
 				setIsMounted(true);
 			});
@@ -21,7 +19,7 @@ function AppartmentList() {
 
 	return (
 		<main role="main">
-			<section id="cardList" className="blur" aria-label="Liste des appartements">
+			<section id="cardList" aria-label="Liste des appartements">
 				<ul id="list">
 					{ApartmentList.map((apartment, index) => (
 						<li className={`${"item-" + index++}`} key={`${apartment.id}`}>

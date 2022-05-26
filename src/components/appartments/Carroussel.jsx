@@ -22,7 +22,7 @@ function Carroussel(props) {
 			currentImage.classList.toggle("disapear");
 			currentImage.classList.toggle("d-none");
 
-			nextImage.classList.remove("d-none");
+			nextImage.classList.toggle("d-none");
 			nextImage.classList.toggle("appear");
 		}, 300);
 	};
